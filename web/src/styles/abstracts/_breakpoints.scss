@@ -1,0 +1,22 @@
+@use "sass:map";
+
+// Mobile-first: todo estilo base vale para telas pequenas
+// e os breakpoints só ADICIONAM regras para telas maiores.
+$breakpoints: (
+  sm: 40rem,
+  md: 48rem,
+  lg: 64rem,
+  xl: 80rem,
+);
+
+@mixin up($name) {
+  $value: map.get($breakpoints, $name);
+
+  @if not $value {
+    @error "Breakpoint desconhecido: `#{$name}`. Use: #{map.keys($breakpoints)}";
+  }
+
+  @media (min-width: $value) {
+    @content;
+  }
+}

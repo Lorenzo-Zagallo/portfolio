@@ -1,0 +1,4 @@
+// Ferramentas do Sass. Nada aqui gera CSS sozinho.
+// Uso em qualquer arquivo: @use "../../styles/abstracts" as *;
+@forward "breakpoints";
+@forward "mixins";

@@ -1,0 +1,4 @@
+// Ponto de entrada do CSS global. A ordem importa: tokens, reset, tipografia.
+@use "base/tokens";
+@use "base/reset";
+@use "base/typography";

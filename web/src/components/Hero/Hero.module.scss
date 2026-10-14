@@ -1,0 +1,76 @@
+@use "../../styles/abstracts" as *;
+
+.hero {
+  @include container;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: var(--space-7);
+  padding-block: var(--space-8) var(--space-6);
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  font-weight: 700;
+  line-height: 0.86;
+  letter-spacing: -0.045em;
+}
+
+// Cada palavra é uma "janela": as letras sobem de dentro dela.
+// O padding/margin compensados evitam cortar topo e descendentes (g, z).
+.word {
+  display: block;
+  overflow: hidden;
+  padding-block: 0.06em 0.14em;
+  margin-block: -0.06em -0.14em;
+}
+
+.letter {
+  display: inline-block;
+}
+
+.info {
+  display: grid;
+  gap: var(--space-5);
+
+  @include up(md) {
+    grid-template-columns: 1.4fr 1fr;
+    align-items: start;
+    column-gap: var(--space-7);
+  }
+}
+
+.summary {
+  font-size: var(--text-lg);
+  line-height: 1.4;
+  max-width: 40ch;
+}
+
+.links {
+  display: flex;
+  gap: var(--space-5);
+  font-size: var(--text-lg);
+
+  a {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.25em;
+    transition: color var(--duration-fast) var(--ease-out);
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+}
+
+.status {
+  grid-column: 1 / -1;
+  padding-block-start: var(--space-4);
+  border-block-start: 1px solid var(--color-line);
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+}

@@ -1,0 +1,23 @@
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+p {
+  max-width: 62ch;
+  text-wrap: pretty;
+}
+
+a {
+  color: inherit;
+}
